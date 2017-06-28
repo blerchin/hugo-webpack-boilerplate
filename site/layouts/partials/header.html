@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ $.Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    {{- if ne (getenv "WEBPACK_HOT") "true" -}}
+      <link rel="stylesheet" href="styles.css" />
+    {{- end -}}
+  </head>
+  <body>

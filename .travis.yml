@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - 7.4.0
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+before_install:
+  - wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.20.7_Linux-64bit.deb
+script:
+  - npm run lint
+  - npm run build
+deploy:
+  fqdn: "carriedonbothsides.com"
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  target_branch: gh-pages
+  on:
+    branch: master

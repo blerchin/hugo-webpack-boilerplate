@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-thin-webfont', '1.0.0');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-thinitalic-webfont', '1.0.0');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-light-webfont', '1.0.0');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-lightitalic-webfont', '1.0.0');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-regular-webfont', '1.0.0');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-regularitalic-webfont', '1.0.0');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-medium-webfont', '1.0.0');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-mediumitalic-webfont', '1.0.0');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-bold-webfont', '1.0.0');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-bolditalic-webfont', '1.0.0');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-black-webfont', '1.0.0');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  @include fontdef('~fonts/roboto', 'roboto-blackitalic-webfont', '1.0.0');
+  font-weight: 700;
+  font-style: italic;
+}

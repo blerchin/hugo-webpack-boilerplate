@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Font Awesome';
+  @include fontdef('~font-awesome/fonts', 'fontawesome-webfont', '4.7.0');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@import "~font-awesome/scss/font-awesome";

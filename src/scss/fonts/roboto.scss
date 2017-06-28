@@ -30,7 +30,7 @@
 }
 @font-face {
   font-family: 'Roboto';
-  @include fontdef('~fonts/roboto', 'roboto-regularitalic-webfont', '1.0.0');
+  @include fontdef('~fonts/roboto', 'roboto-italic-webfont', '1.0.0');
   font-weight: 400;
   font-style: italic;
 }

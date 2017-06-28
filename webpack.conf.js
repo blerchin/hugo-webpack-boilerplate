@@ -74,8 +74,8 @@ export default function(devMode = false) {
     ],
     resolve: {
       modules: [
-        path.resolve('src'), // Search only in the given directory.
-        path.resolve('node_modules')
+        path.resolve('src'),
+        'node_modules'
       ]
     }
   };

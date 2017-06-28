@@ -33,6 +33,7 @@ npm run build
 ## Structure
 
 ```
+|--dist                // HTML/CSS/JS/Media end up here
 |--site                // Everything in here will be built with hugo
 |  |--content          // Pages and collections - ask if you need extra pages
 |  |--data             // YAML data files with any data for use in examples

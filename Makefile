@@ -1,6 +1,6 @@
 SHELL:=/bin/bash
 PORT=3000
-DOCKER_IMG=consec-www
+DOCKER_IMG=hugo-webpack
 DOCKER_CWD=/usr/src/app
 DOCKER_RUN="docker run --rm -p ${PORT}:${PORT} -v ${PWD}/site:${DOCKER_CWD}/site -v ${PWD}/src:${DOCKER_CWD}/src -v ${PWD}/dist:${DOCKER_CWD}/dist ${DOCKER_IMG}"
 

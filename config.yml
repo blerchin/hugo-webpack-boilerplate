@@ -1,0 +1,8 @@
+baseurl: "/"
+languageCode: "en-us"
+title: "Hugo Webpack Site"
+archetypeDir: "site/archetypes"
+contentDir: "site/content"
+dataDir: "site/data"
+layoutDir: "site/layouts"
+staticDir: "site/static"

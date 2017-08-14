@@ -9,7 +9,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from './webpack.conf';
 
 const hugoBin = 'hugo';
-const defaultArgs = ['-d', '../dist', '-s', 'site', '-v'];
+const defaultArgs = ['-d', 'dist', '--config', 'config.yml', '-v'];
 
 const browserSync = BrowserSync.create();
 
@@ -35,7 +35,17 @@ gulp.task('js', (cb) => {
   });
 });
 
-gulp.task('server', ['clean', 'hugo-hot'], () => {
+gulp.task('serve-prod', ['clean', 'hugo', 'js'], () => {
+  browserSync.init({
+    notify: false,
+    open: false,
+    server: {
+      baseDir: './dist'
+    }
+  });
+});
+
+gulp.task('serve-dev', ['clean', 'hugo'], () => {
   const compiler = webpack(webpackConfig(true));
   const webpackMiddleware = webpackDevMiddleware(compiler, {
     publicPath: '/',
@@ -43,6 +53,8 @@ gulp.task('server', ['clean', 'hugo-hot'], () => {
   });
 
   browserSync.init({
+    notify: false,
+    open: false,
     server: {
       baseDir: './dist',
       middleware: [
@@ -51,7 +63,7 @@ gulp.task('server', ['clean', 'hugo-hot'], () => {
       ]
     }
   });
-  gulp.watch('./site/**/*', ['hugo']);
+  gulp.watch('./site/**/*', ['hugo', () => webpackMiddleware.invalidate()]);
 });
 
 function buildSite(cb, options, env = null) {

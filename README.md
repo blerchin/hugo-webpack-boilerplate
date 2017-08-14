@@ -2,7 +2,20 @@
 
 **For websites built with Hugo and Webpack**
 
-## Usage
+## Usage (run with Docker)
+
+```bash
+# Serve with watch, livereload
+make dev
+
+# Serve with static assets
+make serve
+
+# Build assets
+make release
+```
+
+## Usage (run locally)
 
 Be sure that you have the latest node, npm and [Hugo](https://gohugo.io/) installed. If you need to install hugo on OSX, run:
 

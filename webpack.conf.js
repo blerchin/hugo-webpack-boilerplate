@@ -15,7 +15,7 @@ export default function(devMode = false) {
   const cssLoaders = [
     { loader: 'css-loader', options: Object.assign({ minimize: !devMode, sourceMap: true }, cssNano) },
     { loader: 'postcss-loader', options: Object.assign({ sourceMap: true }, postCSS) },
-    'resolve-url-loader',
+    { loader: 'resolve-url-loader', options: { sourceMap: true } },
     { loader: 'sass-loader', options: { sourceMap: true } }
   ];
   if (devMode) {
@@ -31,7 +31,7 @@ export default function(devMode = false) {
         },
         {
           test: /\.((eot)|(woff)|(woff2)|(ttf))(\?v=\d+\.\d+\.\d+)?$/,
-          loader: 'file-loader?name=[hash].[ext]'
+          loader: 'file-loader?name=[name].[hash:4].[ext]'
         },
         {
           test: /\.json$/,
@@ -54,7 +54,7 @@ export default function(devMode = false) {
     entry: function() { //eslint-disable-line object-shorthand
       const hot = devMode ? ['webpack-hot-middleware/client?reload=true'] : [];
       const js = ['./js/app.js'];
-      const img = glob.sync('./img/*', {
+      const img = glob.sync('./img/**/*', {
         absolute: true,
         cwd: this.context,
         matchBase: true,
@@ -64,7 +64,8 @@ export default function(devMode = false) {
       return [...hot, ...js, ...img];
     },
     output: {
-      path: path.join(__dirname, './dist')
+      path: path.join(__dirname, './dist'),
+      publicPath: '/'
     },
     plugins: [
       new webpack.ProvidePlugin({
